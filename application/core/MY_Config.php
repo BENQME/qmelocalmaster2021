@@ -4,14 +4,18 @@ class MY_Config extends CI_Config {
         $this->config =$config_alt = & get_config();
 		 $full_url =$this->full_path();
 		 
-		$servername = "localhost";
-$username = "qmelocal";
-$password = "qm3l0cal$";
-$dbname = "steeltonspotlight";
+/*$servername = "qmedev.cip2cdpgt8bw.us-east-2.rds.amazonaws.com";
+$username = "admin";
+$password = "qmedev2021";
+$dbname = "spotlightmarketplace";*/
+$servername = "aa1chs14w1ci81f.c9glxarpgiuq.us-east-1.rds.amazonaws.com";
+$username = "qmeadmin";
+$password = "Qmedev2021";
+$dbname = "ebdb";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
-//print_r($conn); die;
+print_r($conn); die;
 // Check connection
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
