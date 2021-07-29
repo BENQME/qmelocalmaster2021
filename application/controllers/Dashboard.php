@@ -162,7 +162,7 @@ class Dashboard extends CI_Controller {
 			$data['preferences'] = $check_data->preferences;
 			
 			
-			if(count($check_data)>0 && $this->input->post('submit')==1)
+			if($check_data && count($check_data)>0 && $this->input->post('submit')==1)
 				{
 					 $data['preferences'] = $check_data->preferences;
 					 $preferences = $check_data->preferences;
