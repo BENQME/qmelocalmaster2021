@@ -76,7 +76,7 @@
                         <p><strong>Email: </strong><br /><?php echo $user->email ?></p>
                     </div>
                     <div class="item_list">
-                        <a target="_blank" class="btn btn-success" href="<?php echo base_url('messages/'.$user->userID) ?>">Send Massage</a>
+                        <a target="_blank" class="btn btn-success" href="<?php echo base_url('dashboard/messages/'.$user->userID) ?>">Send Massage</a>
                     </div>
                     <div class="item_list">
                         <a target="_blank" class="btn btn-primary" href="<?php echo base_url('publicprofile/'.$user->userID) ?>">View Profile</a>
