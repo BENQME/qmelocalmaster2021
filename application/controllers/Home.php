@@ -532,7 +532,7 @@ class Home extends CI_Controller {
 						  $user_idss[] =$u_data['user_id'];
 					  }
 				  }
-			 $ids_string =implode(',',$user_idss);
+	         if(is_array($user_idss))$ids_string =implode(',',$user_idss);
 				 $where_filter ="";
 		     if($filter_cat = urldecode($_GET['category'])){
 				$where_filter = " AND s.category='$filter_cat'";
