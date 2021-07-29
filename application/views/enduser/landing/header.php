@@ -201,13 +201,13 @@ nav.navbar-findcond .navbar-right li a{color:<?php echo $header_f_color  ?>}
            
            <?php  foreach($menu_array as $menu_item){ //print_r($menu_item) ?>
               <li <?php if(isset($menu_item->children) && $menu_item->children){ ?>class="dropdown"<?php } ?>>
-                 <a<?php if(isset($menu_item->ext) && $menu_item->ext ==1) echo ' target="_blank"'  ?>  href="<?php echo str_replace('{site_url}',bese_url(),$menu_item->url) ?>" <?php if(isset($menu_item->children) && $menu_item->children){ ?> class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"<?php } ?>><?php echo $menu_item->label ?>
+                 <a<?php if(isset($menu_item->ext) && $menu_item->ext ==1) echo ' target="_blank"'  ?>  href="<?php echo str_replace('{site_url}',base_url(),$menu_item->url) ?>" <?php if(isset($menu_item->children) && $menu_item->children){ ?> class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"<?php } ?>><?php echo $menu_item->label ?>
                   <?php if(isset($menu_item->children) && $menu_item->children){ ?> <span class="fa fa-angle-down"></span><?php } ?></a>
                  <?php if(isset($menu_item->children) && $menu_item->children){ ?>
                  <ul class="dropdown-menu<?php if(count($menu_item->children)> 7) echo ' mga_dropdown' ?>">
                  <?php if(count($menu_item->children)> 7)  echo '<span class="abs_div"><i class="fa fa-close"></i></span>'?>
                     <?php foreach($menu_item->children as $child_item){ ?>
-                         <li><a <?php if(isset($child_item->ext) && $child_item->ext ==1) echo ' target="_blank"'  ?> href="<?php echo str_replace('{site_url}',bese_url(),$child_item->url) ?>"><?php echo $child_item->label ?></a></li>
+                         <li><a <?php if(isset($child_item->ext) && $child_item->ext ==1) echo ' target="_blank"'  ?> href="<?php echo str_replace('{site_url}',base_url(),$child_item->url) ?>"><?php echo $child_item->label ?></a></li>
                     <?php  } ?>
                  </ul>
                  <?php } ?>
