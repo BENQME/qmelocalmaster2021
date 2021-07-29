@@ -156,6 +156,7 @@ class Dashboard extends CI_Controller {
 			
 		 $this->db->where('user_id', $user_id );
 	    $this->db->from('user_profile');
+		$check_data="";
 		$check_data = $this->db->get()->row();
 
 		
