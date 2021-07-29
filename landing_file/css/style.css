@@ -21,7 +21,10 @@ a{
      font-family: 'Overpass-Regular';
 }
 
-
+.logotext h1 {
+    font-size: 18px;
+    font-weight: 800;
+}
 /***** Header *******/
 nav.navbar-findcond {
      background-repeat: no-repeat;
