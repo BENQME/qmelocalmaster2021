@@ -207,7 +207,7 @@ nav.navbar-findcond .navbar-right li a{color:<?php echo $header_f_color  ?>}
                  <ul class="dropdown-menu<?php if(count($menu_item->children)> 7) echo ' mga_dropdown' ?>">
                  <?php if(count($menu_item->children)> 7)  echo '<span class="abs_div"><i class="fa fa-close"></i></span>'?>
                     <?php foreach($menu_item->children as $child_item){ ?>
-                         <li><a <?php if(isset($child_item->ext) && $child_item->ext ==1) echo ' target="_blank"'  ?> href="<?php echo $child_item->url ?>"><?php echo $child_item->label ?></a></li>
+                         <li><a <?php if(isset($child_item->ext) && $child_item->ext ==1) echo ' target="_blank"'  ?> href="<?php echo str_replace('{site_url}',bese_url(),$child_item->url) ?>"><?php echo $child_item->label ?></a></li>
                     <?php  } ?>
                  </ul>
                  <?php } ?>
