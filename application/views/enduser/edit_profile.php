@@ -340,8 +340,8 @@ $('#profile_pic .upload-result').on('click', function (ev) {
 				//('#profile_pic .hide_this_always').show();
 				 $('#loading').hide();
 				  $('.upload-result').show();
-				html = '<img src="' + resp + '" />';
-				$("#upload-demo-i").html(html);
+				html = '<img class="class="profile-pic" src="' + resp + '" />';
+				$("#profile_pic .img_box").html(html);
 			}
 		});
 	});
