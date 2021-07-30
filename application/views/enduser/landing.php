@@ -396,7 +396,7 @@
                 <div class="row activities-content">
                    <div class="col-sm-6">
                       <h4 class="wow fadeInUp"><?php echo site_info() ?></h4>
-                      <h1 class="wow fadeInDown" data-wow-delay="0.1s">Featured  Activities</h1>
+                      <h1 class="wow fadeInDown" data-wow-delay="0.1s">Featured  Stories</h1>
                    </div>
                    <?php /*?><div class="col-sm-6">
                       <div class="category-list">
