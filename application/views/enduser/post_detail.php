@@ -537,7 +537,7 @@ iframe{max-width:100%}
                 <div class="card-footer custom-card">
                     
                     <div class="d-flex post-actions">
-                        <?php if(count($likes_data)>0){ 
+                        <?php if($likes_data && count($likes_data)>0){ 
                                 $already_like= 'heartfill';
                              }else{ 
                                 $already_like= '';
