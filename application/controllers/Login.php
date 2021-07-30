@@ -211,6 +211,7 @@ class Login extends CI_Controller {
 		}
         $data = base64_decode($data);
 		
+		
 		if(!$check_img->photo && !$data){
 			echo 'Please Upload Picture'; die;
 		}else{
