@@ -428,7 +428,7 @@ class Login extends CI_Controller {
 		
 		$data['has_business'] = $check_data->has_business;
 		
-		if(count($check_data)>0 && $this->input->post('submit')==1)
+		if($check_data && $this->input->post('submit')==1)
 		{
 
 			$data['has_business'] = $check_data->has_business;
