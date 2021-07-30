@@ -332,7 +332,6 @@ $('#profile_pic .upload-result').on('click', function (ev) {
 			 beforeSend: function(){
 				 $('#loading').html('Uploading....');
 				 $('.upload-result').hide();
-				
 			},
 			success: function (data) {
 				console.log(data)
