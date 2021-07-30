@@ -1148,6 +1148,7 @@
         
         
 <?php  if(!special_cms()) { ?>
+dddddddddddddd
         <?php if(isset($categories)): 
 
 		$f_spotlights_array= array();
