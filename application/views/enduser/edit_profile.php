@@ -335,6 +335,7 @@ $('#profile_pic .upload-result').on('click', function (ev) {
 				
 			},
 			success: function (data) {
+				console.log(data)
 			      //location.reload();
 				   $("#profile_pic .modal-footer .btn").trigger("click");
 				//('#profile_pic .hide_this_always').show();
