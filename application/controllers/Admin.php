@@ -797,7 +797,7 @@ function choose_theme(){
     }
 	
 		public function banner_upload() {
-		//print_r($_FILES['b_image']['name']); die;
+		print_r($_FILES['b_image']['name']); die;
 		$site_id = site_id();
         $target_path = base_url() . "uploads/banners/";        
         if ($_FILES['b_image']['name']) {

@@ -932,7 +932,7 @@ public function ajax_coverphoto_upload()
 		$this->db->where('postID', $spotlightid);
 		$check_img = $this->db->get()->row();
 		if($photo = $check_img->cover_photo){
-			@unlink(FCPATH ."images/cover_photo/".$photo);
+			@unlink(FCPATH ."uploads/cover_photo/".$photo);
 		}
         $data = base64_decode($data);
 		
@@ -940,7 +940,7 @@ public function ajax_coverphoto_upload()
 			echo 'Please Upload Picture'; die;
 		}else{
         $imageName = time().'.png';
-        file_put_contents(FCPATH .'images/cover_photo/'.$imageName, $data);
+        file_put_contents(FCPATH .'uploads/cover_photo/'.$imageName, $data);
 		$insData = array('cover_photo' => $imageName);
         $this->db->update('spotlights', $insData, array('postID' => $spotlightid));
 		  
@@ -961,11 +961,11 @@ public function uploads()
 		
 		if($type == 'photo')
 		{
-			$config['upload_path'] 	= 'images';
+			$config['upload_path'] 	= 'uploads/profile_img';
 		}
 		elseif($type == 'cover')
 		{
-			$config['upload_path'] 	= 'images';
+			$config['upload_path'] 	= 'uploads/covers';
 		}
 		else
 		{
@@ -990,7 +990,7 @@ public function uploads()
 	
 				//upload successful generate a thumbnail
 				$config['image_library'] 	= 'gd2';
-				$config['source_image'] 	= 'images/' . $this->upload_data['userfile']['file_name'];
+				$config['source_image'] 	= 'uploads/profile_img/' . $this->upload_data['userfile']['file_name'];
 				$config['create_thumb'] 	= FALSE;
 				$config['maintain_ratio'] 	= TRUE;
 				$config['width']     		= 500;
