@@ -1852,7 +1852,7 @@ public function picture_res($sigment) {
 	//print_r($_FILES['profile_pic']['name']); die;
 	if ($_FILES['thumbnail']['name']!="") {
 		$target_path = $target_path . basename($_FILES['thumbnail']['name']);
-		$config['upload_path'] = '../uploads/res/';
+		$config['upload_path'] = '/uploads/res/';
 		$config['allowed_types'] = 'gif|jpg|png';
 		$config['max_size'] = '50000';	
 		$this->load->library('upload', $config);
