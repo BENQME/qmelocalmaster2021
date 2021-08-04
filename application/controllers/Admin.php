@@ -471,7 +471,7 @@ function choose_theme(){
 		$site_id = site_id();
 		$user_id = $this->session->userdata('user_id');
 		$user_level = $this->session->userdata('user_level');
-		if($user_id>0 && $user_level==1){
+		if($user_id && $user_level==1){
 			
 				$data['page_type']='user_list';
 				$data['landing_menu'] =site_settings('landing_menu');
