@@ -797,6 +797,7 @@ function choose_theme(){
     }
 	
 		public function banner_upload() {
+			$this->load->library('upload');
 		//print_r($_FILES['b_image']['name']); die;
 		$site_id = site_id();
         $target_path = base_url() . "images/";        
@@ -805,8 +806,8 @@ function choose_theme(){
             $config['upload_path'] = './uploads/banners/';
             $config['allowed_types'] = 'gif|jpg|jpeg|png';
             $config['max_size'] = '150000';
-            $this->load->library('upload', $config);
-			print_r('here'); die;
+            //$this->load->library('upload', $config);
+			$this->upload->initialize($config);
             if ($this->upload->do_upload('b_image')) {
 				$banner_settings =site_settings('banner_settings');
 				$banner_image=array();
