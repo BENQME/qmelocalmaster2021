@@ -63,7 +63,7 @@
  * Different environments will require different levels of error reporting.
  * By default development will show errors but testing and live will hide them.
  */
-define('ENVIRONMENT', 'production');
+define('ENVIRONMENT', 'development');
 switch (ENVIRONMENT)
 {
 	case 'development':
@@ -329,5 +329,5 @@ switch (ENVIRONMENT)
  *
  * And away we go...
  */
-error_reporting(0);
+//error_reporting(0);
 require_once BASEPATH.'core/CodeIgniter.php';
