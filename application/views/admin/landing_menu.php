@@ -368,7 +368,7 @@
         <?php endif ?>
 
         <?php 
-echo BASEPATH;
+echo APPPATH ;
         $settings_array= array();
          $logo_settings = site_settings('logo_settings');
         if($logo_settings) $settings_array = json_decode($logo_settings); //print_r($settings_array) ?>
