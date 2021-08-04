@@ -805,9 +805,9 @@ function choose_theme(){
             $config['upload_path'] = './uploads/banners/';
             $config['allowed_types'] = 'gif|jpg|jpeg|png';
             $config['max_size'] = '150000';
-			print_r('here'); die;
-            $this->load->library('upload', $config);
 			
+            $this->load->library('upload', $config);
+			print_r('here'); die;
             if ($this->upload->do_upload('b_image')) {
 				$banner_settings =site_settings('banner_settings');
 				$banner_image=array();
