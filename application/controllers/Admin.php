@@ -798,11 +798,11 @@ function choose_theme(){
 	
 		public function banner_upload() {
 		$site_id = site_id();
-        $target_path =$_SERVER["DOCUMENT_ROOT"] . "images/";        
+        $target_path = base_url() . "uploads/banners/";        
         if ($_FILES['b_image']['name']) {
             $target_path = $target_path . basename($_FILES['b_image']['name']);
             //$config['upload_path'] = 'http://bmeq-env.eba-i8tc7uwr.us-east-2.elasticbeanstalk.com/uploads/banners/';
-			$config['upload_path'] = $_SERVER["DOCUMENT_ROOT"].'/images/'; // upload path
+			$config['upload_path'] = $_SERVER["DOCUMENT_ROOT"].'/uploads/banners/'; // upload path
 //$config['upload_path'] = __DIR__.'/uploads/banners/'; // upload path
             $config['allowed_types'] = 'gif|jpg|jpeg|png';
             $config['max_size'] = '150000';
@@ -818,7 +818,7 @@ function choose_theme(){
 				}
 				
 				if($banner_image){
-					@unlink($_SERVER["DOCUMENT_ROOT"]."images/".$banner_image);
+					@unlink(FCPATH ."uploads/banners/".$banner_image);
 				}
 				 $upload_data = $this->upload->data();
 				
@@ -827,7 +827,6 @@ function choose_theme(){
 				//$zdata = ['upload_data' => $this->upload->data()]; // get data
 //echo $zfile = $upload_data['upload_data']['full_path']; // get file path
 $zfile = $upload_data['full_path'];
-echo $zfile; die;
 chmod($zfile,0777); 
 //die;
                 $this->db->update('site_settings',array('value'=>json_encode($banner_data)), array('option_type'=>'banner_settings','site_id'=>$site_id ));
