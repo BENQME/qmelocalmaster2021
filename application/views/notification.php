@@ -13,6 +13,6 @@
 	}
 	$errors = validation_errors();
     if($errors){
-        echo '<div class="alert alert-warning">'.$errors.' </div>';
+        echo '<div class="alert alert-warning">'.$errors.'</div>';
     }
 ?>
