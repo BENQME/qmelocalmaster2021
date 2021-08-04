@@ -801,9 +801,9 @@ function choose_theme(){
         $target_path = base_url() . "uploads/banners/";        
         if ($_FILES['b_image']['name']) {
             $target_path = $target_path . basename($_FILES['b_image']['name']);
-            $config['upload_path'] = 'http://bmeq-env.eba-i8tc7uwr.us-east-2.elasticbeanstalk.com/uploads/banners/';
+            //$config['upload_path'] = 'http://bmeq-env.eba-i8tc7uwr.us-east-2.elasticbeanstalk.com/uploads/banners/';
 			$config['upload_path'] = $_SERVER["DOCUMENT_ROOT"].'/uploads/banners/'; // upload path
-$config['upload_path'] = __DIR__.'/uploads/banners/'; // upload path
+//$config['upload_path'] = __DIR__.'/uploads/banners/'; // upload path
             $config['allowed_types'] = 'gif|jpg|jpeg|png';
             $config['max_size'] = '150000';
             $this->load->library('upload', $config);
