@@ -961,7 +961,7 @@ public function uploads()
 		
 		if($type == 'photo')
 		{
-			$config['upload_path'] 	= 'uploads/profile_img';
+			$config['upload_path'] 	= 'images';
 		}
 		elseif($type == 'cover')
 		{
