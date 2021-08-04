@@ -834,7 +834,7 @@ function banner_settings(){
         $target_path = base_url() . "images/";        
         if ($_FILES['b_image']['name']) {
             $target_path = $target_path . basename($_FILES['b_image']['name']);
-            $config['upload_path'] = './images/';
+            $config['upload_path'] = '../images/';
             $config['allowed_types'] = 'gif|jpg|jpeg|png';
             $config['max_size'] = '150000';
 			
