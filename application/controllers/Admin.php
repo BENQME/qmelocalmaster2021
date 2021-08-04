@@ -466,37 +466,6 @@ function choose_theme(){
 	 }
 }
 
-function banner_settings(){
-		$user_level =0;
-		$site_id = site_id();
-		$user_id = $this->session->userdata('user_id');
-		$user_level = $this->session->userdata('user_level');
-		if($user_id && $user_level==1){
-					if($this->input->post('b_submit') == 1){
-					$b_title = $this->input->post('b_title');
-					$b_sub_title = $this->input->post('b_sub_title');
-					$landing_menu = json_decode($banner_settings);
-					
-					//print_r($landing_menu); die;
-					if(isset($landing_menu->b_image)){
-						$json_data = json_encode(array('b_title'=>$b_title,'sub_title'=>$b_sub_title,'b_image'=>$landing_menu->b_image));
-					
-					}else{
-						$json_data = json_encode(array('b_title'=>$b_title,'sub_title'=>$b_sub_title,'b_image'=>''));
-					}
-					if($data['banner_settings']){
-						$this->db->update('site_settings',array('value'=>$json_data),array('option_type'=>'banner_settings','site_id'=>$site_id ));
-					}else{
-						$this->db->insert('site_settings',array('value'=>$json_data,'option_type'=>'banner_settings','site_id'=>$site_id));
-					}
-					$this->banner_upload();
-					$this->session->set_flashdata('success3', 'updated Sucessfully');
-					redirect('admin/landing_menu#success3');
-				}
-		}
-	}
-
-
 	function landing_menu(){
 		$user_level =0;
 		$site_id = site_id();
@@ -828,18 +797,14 @@ function banner_settings(){
     }
 	
 		public function banner_upload() {
-			//$this->load->library('upload'); 
-		//print_r($_FILES['b_image']['name']); die;
 		$site_id = site_id();
-        $target_path = base_url() . "images/";        
+        $target_path = base_url() . "uploads/banners/";        
         if ($_FILES['b_image']['name']) {
             $target_path = $target_path . basename($_FILES['b_image']['name']);
-            $config['upload_path'] = FCPATH.'images/';
+            $config['upload_path'] = './images/';
             $config['allowed_types'] = 'gif|jpg|jpeg|png';
             $config['max_size'] = '150000';
-			
-           $this->load->library('upload',$config);
-			//print_r('here'); die;
+            $this->load->library('upload', $config);
             if ($this->upload->do_upload('b_image')) {
 				$banner_settings =site_settings('banner_settings');
 				$banner_image=array();
