@@ -73,7 +73,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $active_group = 'default';
 $query_builder = TRUE;
 $db['default'] = array(
-
 	'dsn'	=> '',
 	/*'hostname' => 'qmedev.cip2cdpgt8bw.us-east-2.rds.amazonaws.com',
 	'username' => 'admin',
