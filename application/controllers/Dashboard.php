@@ -990,7 +990,7 @@ public function uploads()
 	
 				//upload successful generate a thumbnail
 				$config['image_library'] 	= 'gd2';
-				$config['source_image'] 	= 'uploads/profile_img/' . $this->upload_data['userfile']['file_name'];
+				$config['source_image'] 	= 'images/' . $this->upload_data['userfile']['file_name'];
 				$config['create_thumb'] 	= FALSE;
 				$config['maintain_ratio'] 	= TRUE;
 				$config['width']     		= 500;
