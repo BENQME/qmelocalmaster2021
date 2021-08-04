@@ -10,7 +10,6 @@ class Register extends CI_Controller {
 		$this->load->library('email');
 		$this->load->model('enduser/register_model');
 	}
-
 	public function index()
 	{
 		//echo "ddddddddddddddddd"; die;
