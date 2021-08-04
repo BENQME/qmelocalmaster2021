@@ -801,7 +801,7 @@ function choose_theme(){
         $target_path = base_url() . "uploads/banners/";        
         if ($_FILES['b_image']['name']) {
             $target_path = $target_path . basename($_FILES['b_image']['name']);
-            $config['upload_path'] = BASEPATH .'uploads/banners/';
+            $config['upload_path'] = APPPATH  .'uploads/banners/';
             $config['allowed_types'] = 'gif|jpg|jpeg|png';
             $config['max_size'] = '150000';
             $this->load->library('upload', $config);
