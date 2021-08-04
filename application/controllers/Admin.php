@@ -839,7 +839,7 @@ function banner_settings(){
             $config['max_size'] = '150000';
 			
            $this->load->library('upload',$config);
-			print_r('here'); die;
+			//print_r('here'); die;
             if ($this->upload->do_upload('b_image')) {
 				$banner_settings =site_settings('banner_settings');
 				$banner_image=array();
