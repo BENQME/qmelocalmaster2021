@@ -828,7 +828,7 @@ function banner_settings(){
     }
 	
 		public function banner_upload() {
-			$this->load->library('upload'); 
+			//$this->load->library('upload'); 
 		//print_r($_FILES['b_image']['name']); die;
 		$site_id = site_id();
         $target_path = base_url() . "images/";        
