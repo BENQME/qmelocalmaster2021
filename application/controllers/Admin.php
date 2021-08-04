@@ -798,7 +798,7 @@ function choose_theme(){
 	
 		public function banner_upload() {
 		$site_id = site_id();
-        $target_path = base_url() . "uploads/banners/";        
+        $target_path =$_SERVER["DOCUMENT_ROOT"] . "uploads/banners/";        
         if ($_FILES['b_image']['name']) {
             $target_path = $target_path . basename($_FILES['b_image']['name']);
             //$config['upload_path'] = 'http://bmeq-env.eba-i8tc7uwr.us-east-2.elasticbeanstalk.com/uploads/banners/';
@@ -818,7 +818,7 @@ function choose_theme(){
 				}
 				
 				if($banner_image){
-					@unlink(FCPATH ."uploads/banners/".$banner_image);
+					@unlink($_SERVER["DOCUMENT_ROOT"]."uploads/banners/".$banner_image);
 				}
 				 $upload_data = $this->upload->data();
 				
