@@ -965,7 +965,7 @@ public function uploads()
 		}
 		elseif($type == 'cover')
 		{
-			$config['upload_path'] 	= 'uploads/covers';
+			$config['upload_path'] 	= 'images';
 		}
 		else
 		{
