@@ -628,9 +628,9 @@ function choose_theme(){
 					}else{
 						$this->db->insert('site_settings',array('value'=>$json_data,'option_type'=>'logo_settings','site_id'=>$site_id));
 					}
-					$this->logo_upload();
-					$this->logo_upload2();
-					$this->favicon_upload();
+					//$this->logo_upload();
+					//$this->logo_upload2();
+					//$this->favicon_upload();
 					$this->session->set_flashdata('success99', 'updated Sucessfully');
 					redirect('admin/landing_menu#success99');
 				}
