@@ -606,15 +606,15 @@ function choose_theme(){
 					$footer_color = $this->input->post('footer_color');
 					$footer_f_color = $this->input->post('footer_f_color');
 					$footer_f_color2 = $this->input->post('footer_f_color2');
-					//print_r($logo_settings); die;
+					print_r($logo_settings); die;
 					if(isset($logo_settings)){
 						$json_data = json_encode(array(
-						                              'header_color'=>$header_color,
-													  'footer_color'=>$footer_color,
-													  'header_f_color'=>$header_f_color,
-													  'footer_f_color'=>$footer_f_color,
-													  'footer_f_color2'=>$footer_f_color2,
-													'logo'=>$logo_settings->logo,'favicon'=>$logo_settings->favicon));
+											  'header_color'=>$header_color,
+											  'footer_color'=>$footer_color,
+											  'header_f_color'=>$header_f_color,
+											  'footer_f_color'=>$footer_f_color,
+											  'footer_f_color2'=>$footer_f_color2,
+											'logo'=>$logo_settings->logo,'favicon'=>$logo_settings->favicon));
 					
 					}else{
 						$json_data = json_encode(array('header_color'=>$header_color,
