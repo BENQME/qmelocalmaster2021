@@ -824,8 +824,8 @@ function choose_theme(){
 				
                 $banner_data->b_image = $upload_data['file_name'];
 				
-				$zdata = ['upload_data' => $this->upload->data()]; // get data
-$zfile = $zdata['upload_data']['full_path']; // get file path
+				//$zdata = ['upload_data' => $this->upload->data()]; // get data
+$zfile = $upload_data['upload_data']['full_path']; // get file path
 chmod($zfile,0777); 
                 $this->db->update('site_settings',array('value'=>json_encode($banner_data)), array('option_type'=>'banner_settings','site_id'=>$site_id ));
             }else{
