@@ -1,39 +1,31 @@
-<?php
-   if(isset($_FILES['image'])){
-      $errors= array();
-      $file_name = $_FILES['image']['name'];
-      $file_size =$_FILES['image']['size'];
-      $file_tmp =$_FILES['image']['tmp_name'];
-      $file_type=$_FILES['image']['type'];
-      $file_ext=strtolower(end(explode('.',$_FILES['image']['name'])));
-      
-      $expensions= array("jpeg","jpg","png");
-      
-      if(in_array($file_ext,$expensions)=== false){
-         $errors[]="extension not allowed, please choose a JPEG or PNG file.";
-      }
-      
-      if($file_size > 2097152){
-         $errors[]='File size must be excately 2 MB';
-      }
-	  $target ="images/".$file_name;
-      
-      if(empty($errors)==true){
-         move_uploaded_file($file_tmp,$target);
-		   $fp = fopen($target, "r");
-         echo "Success";
-      }else{
-         print_r($errors);
-      }
-   }
-?>
 <html>
-   <body>
-      
-      <form action="" method="POST" enctype="multipart/form-data">
-         <input type="file" name="image" />
-         <input type="submit"/>
-      </form>
-      
-   </body>
-</html>
+<head>
+<title>PHP File Upload example</title>
+</head>
+<body>
+
+<form action="fileupload.php" enctype="multipart/form-data" method="post">
+Select image :
+<input type="file" name="file"><br/>
+<input type="submit" value="Upload" name="Submit1"> <br/>
+
+
+</form>
+<?php
+if(isset($_POST['Submit1']))
+{ 
+$filepath = "images/" . $_FILES["file"]["name"];
+
+if(move_uploaded_file($_FILES["file"]["tmp_name"], $filepath)) 
+{
+echo "<img src=".$filepath." height=200 width=300 />";
+} 
+else 
+{
+echo "Error !!";
+}
+} 
+?>
+
+</body>
+</html
