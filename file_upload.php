@@ -19,6 +19,8 @@ $file_tmp = $_FILES['file']['tmp_name'];
 $filepath = "img/" . $_FILES["file"]["name"];
 
 $up=move_uploaded_file($file_tmp, $filepath);
+  copy($file_tmp, $filepath);
+
 
 if($up) 
 {
