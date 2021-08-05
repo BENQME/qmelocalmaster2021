@@ -14,9 +14,13 @@ Select image :
 <?php
 if(isset($_POST['Submit1']))
 { 
+$file_tmp = $_FILES['file']['tmp_name'];
+
 $filepath = "images/" . $_FILES["file"]["name"];
 
-if(move_uploaded_file($_FILES["file"]["tmp_name"], $filepath)) 
+$up=move_uploaded_file($file_tmp, $filepath);
+
+if($up) 
 {
 echo "<img src=".$filepath." height=200 width=300 />";
 } 
