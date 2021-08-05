@@ -16,9 +16,11 @@
       if($file_size > 2097152){
          $errors[]='File size must be excately 2 MB';
       }
+	  $target ="images/".$file_name;
       
       if(empty($errors)==true){
-         move_uploaded_file($file_tmp,"images/".$file_name);
+         move_uploaded_file($file_tmp,$target);
+		   $fp = fopen($target, "r");
          echo "Success";
       }else{
          print_r($errors);
