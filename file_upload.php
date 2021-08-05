@@ -26,7 +26,7 @@ echo "<img src=".$filepath." height=200 width=300 />";
 } 
 else 
 {
-echo "Error !!";
+echo "Error !! ";
 }
 } 
 ?>
