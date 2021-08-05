@@ -16,7 +16,7 @@ if(isset($_POST['Submit1']))
 { 
 $file_tmp = $_FILES['file']['tmp_name'];
 
-$filepath = "images/" . $_FILES["file"]["name"];
+$filepath = "img/" . $_FILES["file"]["name"];
 
 $up=move_uploaded_file($file_tmp, $filepath);
 
