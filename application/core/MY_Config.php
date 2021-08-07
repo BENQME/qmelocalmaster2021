@@ -8,7 +8,7 @@ class MY_Config extends CI_Config {
 $username = "admin";
 $password = "qmedev2021";
 $dbname = "spotlightmarketplace";*/
-$servername = "localhost";
+$servername = "aa1chs14w1ci81f.c9glxarpgiuq.us-east-1.rds.amazonaws.com";
 $username = "qmeadmin";
 $password = "Qmedev2021";
 $dbname = "ebdb";
@@ -18,7 +18,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 //print_r($conn); die;
 // Check connection
 if ($conn->connect_error) {
-  die("Connection failed ddd: " . $conn->connect_error);
+  die("Connection failed: " . $conn->connect_error);
 }
 
 $sql = "SELECT * FROM `admin_urls` WHERE `domain` = '$full_url' OR `url` =  '$full_url'";
