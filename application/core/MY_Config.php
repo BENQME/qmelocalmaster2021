@@ -8,8 +8,8 @@ class MY_Config extends CI_Config {
 $username = "admin";
 $password = "qmedev2021";
 $dbname = "spotlightmarketplace";*/
-$servername = "aa1chs14w1ci81f.c9glxarpgiuq.us-east-1.rds.amazonaws.com";
-$username = "qmeadmin";
+$servername = "bmedev.cip2cdpgt8bw.us-east-2.rds.amazonaws.com";
+$username = "qmeadmin1";
 $password = "Qmedev2021";
 $dbname = "ebdb";
 
