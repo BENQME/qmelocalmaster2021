@@ -11,7 +11,7 @@ $dbname = "spotlightmarketplace";*/
 $servername = "bmedev.cip2cdpgt8bw.us-east-2.rds.amazonaws.com";
 $username = "qmeadmin1";
 $password = "Qmedev2021";
-$dbname = "ebdb";
+$dbname = "qme_dev";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
