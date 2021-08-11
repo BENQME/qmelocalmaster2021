@@ -17,7 +17,7 @@ Select image :
  if(isset($_POST['Submit1']))
 { 
 $file_tmp = $_FILES['file']['tmp_name'];
-
+$fnm = $_FILES["file"]["name"];
 $filepath = "uploads/" . $_FILES["file"]["name"];
 
 //$filepath="https://github.com/BENQME/qmelocalmaster2021/tree/main/uploads". $_FILES["file"]["name"];
@@ -77,7 +77,7 @@ $up=move_uploaded_file($file_tmp, $filepath);
   //pushFile("your_username","your_personal_token","username/repository","repository_branch","path_of_targetfile_in_repository","base64_encoded_data");
 if($up) 
 {
-	pushFile("BENQME"," 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","BENQME/qmelocalmaster2021","main","uploads","base64_encoded_data",'$file_tmp');
+	pushFile("BENQME"," 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","BENQME/qmelocalmaster2021","main","uploads","base64_encoded_data",'$fnm');
 echo "<img src=".$filepath." height=200 width=300 />";
 } 
 else 
