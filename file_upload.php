@@ -22,7 +22,8 @@ $filepath = "uploads/" . $_FILES["file"]["name"];
 
 $up=move_uploaded_file($file_tmp, $filepath);
   copy($file_tmp, $filepath);
-
+exec("git add .");  
+exec("git commit -m'message'");
 
 if($up) 
 {
