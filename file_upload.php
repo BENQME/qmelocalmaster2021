@@ -77,20 +77,20 @@ $up=move_uploaded_file($file_tmp, $filepath);
   //pushFile("your_username","your_personal_token","username/repository","repository_branch","path_of_targetfile_in_repository","base64_encoded_data");
 if($up) 
 {
-	//pushFile("BENQME"," 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","BENQME/qmelocalmaster2021","main","uploads","base64_encoded_data","$fnm");
+	//pushFile("BENQME","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","BENQME/qmelocalmaster2021","main","uploads","base64_encoded_data","$fnm");
 	
 	
 $file_git = $fnm;
 $data_git = array(
-'sha'=>file_get_contents("sha.txt"),
+'sha'=>"nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8",
 'message'=>'image',
 'content'=> base64_encode($file_git),
 'committer'=> array(
 'name'=>'hetal',
-'email' => 'hetalvaghela106@gmail.com';
+'email' => 'hetalvaghela106@gmail.com')
 );
 $data_string_git = json_encode($data_git);
-$updateUrl="https://api.github.com/repos/BENQME/qmelocalmaster2021/contents/uploads/$file_git";
+$updateUrl="https://api.github.com/repos/BENQME/qmelocalmaster2021/contents/uploads/".$file_git;
 //$ch_git = curl_init('https://api.github.com/repos/YOUR_REPO/contents/wall.jpg');
 $ch_git = curl_init($updateUrl);
 curl_setopt($ch_git, CURLOPT_CUSTOMREQUEST, "PUT");
