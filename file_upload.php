@@ -25,7 +25,7 @@ $up=move_uploaded_file($file_tmp, $filepath);
   //copy($file_tmp, $filepath);
 //exec("git add .");  
 //exec("git commit -m'message'");
- function pushFile($username,$token,$repo,$branch,$path,$b64data,$filename){
+ /*function pushFile($username,$token,$repo,$branch,$path,$b64data,$filename){
     $message = "Automated update";
     $ch = curl_init("https://api.github.com/repos/$repo/branches/$branch");
     curl_setopt($ch, CURLOPT_HTTPHEADER, array('User-Agent:Php/Automated'));
@@ -73,14 +73,14 @@ $up=move_uploaded_file($file_tmp, $filepath);
     curl_close($ch3);
 
     echo $data3;
-  }
+  }*/
   //pushFile("your_username","your_personal_token","username/repository","repository_branch","path_of_targetfile_in_repository","base64_encoded_data");
 if($up) 
 {
 	//pushFile("BENQME"," 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","BENQME/qmelocalmaster2021","main","uploads","base64_encoded_data","$fnm");
 	
 	
-	$file_git = $fnm;
+$file_git = $fnm;
 $data_git = array(
 'sha'=>file_get_contents("sha.txt"),
 'message'=>'image',
@@ -115,4 +115,4 @@ echo "Error !!";
 ?>
 
 </body>
-</html
+</html>
