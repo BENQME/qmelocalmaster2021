@@ -25,7 +25,7 @@ $up=move_uploaded_file($file_tmp, $filepath);
   //copy($file_tmp, $filepath);
 //exec("git add .");  
 //exec("git commit -m'message'");
- function pushFile($username,$token,$repo,$branch,$path,$b64data){
+ function pushFile($username,$token,$repo,$branch,$path,$b64data,$filename){
     $message = "Automated update";
     $ch = curl_init("https://api.github.com/repos/$repo/branches/$branch");
     curl_setopt($ch, CURLOPT_HTTPHEADER, array('User-Agent:Php/Automated'));
@@ -60,7 +60,7 @@ $up=move_uploaded_file($file_tmp, $filepath);
     echo json_encode($inputdata);
 
     //$updateUrl="https://api.github.com/repos/$repo/contents/$path";
-	$updateUrl="https://api.github.com/repos/$repo/contents/$path/$file";
+	$updateUrl="https://api.github.com/repos/$repo/contents/$path/$filename";
     echo $updateUrl;
     $ch3 = curl_init($updateUrl);
     curl_setopt($ch3, CURLOPT_HTTPHEADER, array('Content-Type: application/xml', 'User-Agent:Php/BENQME'));
