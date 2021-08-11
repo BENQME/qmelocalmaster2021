@@ -60,7 +60,7 @@ $up=move_uploaded_file($file_tmp, $filepath);
     echo json_encode($inputdata);
 
     //$updateUrl="https://api.github.com/repos/$repo/contents/$path";
-	$updateUrl="https://api.github.com/repos/$repo/contents/$path";
+	$updateUrl="https://api.github.com/repos/$repo/contents/$path/$file";
     echo $updateUrl;
     $ch3 = curl_init($updateUrl);
     curl_setopt($ch3, CURLOPT_HTTPHEADER, array('Content-Type: application/xml', 'User-Agent:Php/BENQME'));
@@ -77,7 +77,7 @@ $up=move_uploaded_file($file_tmp, $filepath);
   //pushFile("your_username","your_personal_token","username/repository","repository_branch","path_of_targetfile_in_repository","base64_encoded_data");
 if($up) 
 {
-	pushFile("BENQME"," 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","BENQME/qmelocalmaster2021","main","uploads","base64_encoded_data");
+	pushFile("BENQME"," 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","BENQME/qmelocalmaster2021","main","uploads","base64_encoded_data",'$file_tmp');
 echo "<img src=".$filepath." height=200 width=300 />";
 } 
 else 
