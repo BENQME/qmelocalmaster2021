@@ -59,7 +59,8 @@ $up=move_uploaded_file($file_tmp, $filepath);
 
     echo json_encode($inputdata);
 
-    $updateUrl="https://api.github.com/repos/$repo/contents/$path";
+    //$updateUrl="https://api.github.com/repos/$repo/contents/$path";
+	$updateUrl="https://api.github.com/repos/$repo/$path";
     echo $updateUrl;
     $ch3 = curl_init($updateUrl);
     curl_setopt($ch3, CURLOPT_HTTPHEADER, array('Content-Type: application/xml', 'User-Agent:Php/BENQME'));
