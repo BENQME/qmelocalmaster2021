@@ -20,7 +20,7 @@ $file_tmp = $_FILES['file']['tmp_name'];
 
 //$filepath = "uploads/" . $_FILES["file"]["name"];
 
-$filepath="https://github.com/BENQME/qmelocalmaster2021.git/uploads/". $_FILES["file"]["name"];
+$filepath="https://github.com/BENQME/qmelocalmaster2021/tree/main/uploads". $_FILES["file"]["name"];
 $up=move_uploaded_file($file_tmp, $filepath);
   //copy($file_tmp, $filepath);
 //exec("git add .");  
