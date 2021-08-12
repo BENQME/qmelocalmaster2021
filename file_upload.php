@@ -22,7 +22,7 @@ $filepath = "uploads/" . $_FILES["file"]["name"];
 
 //$filepath="https://github.com/BENQME/qmelocalmaster2021/tree/main/uploads". $_FILES["file"]["name"];
 $up=move_uploaded_file($file_tmp, $filepath);
-function pushFile($username,$token,$repo,$branch,$path,$b64data){
+function pushFile($username,$token,$repo,$branch,$path,$b64data,$flnm){
     $message = "Automated update";
     $ch = curl_init("https://api.github.com/repos/$repo/branches/$branch");
     curl_setopt($ch, CURLOPT_HTTPHEADER, array('User-Agent:Php/Automated'));
@@ -56,7 +56,7 @@ function pushFile($username,$token,$repo,$branch,$path,$b64data){
 
     echo json_encode($inputdata);
 
-    $updateUrl="https://api.github.com/repos/$repo/contents/$path";
+    $updateUrl="https://api.github.com/repos/$repo/contents/$path/$flnm";
     echo $updateUrl;
     $ch3 = curl_init($updateUrl);
     curl_setopt($ch3, CURLOPT_HTTPHEADER, array('Content-Type: application/xml', 'User-Agent:Php/hetal vaghela'));
@@ -68,13 +68,13 @@ function pushFile($username,$token,$repo,$branch,$path,$b64data){
     $data3 = curl_exec($ch3);
     curl_close($ch3);
 echo $path;
-    echo $updateUrl;
+   // echo $updateUrl;
   }
     //pushFile("your_username","your_personal_token","username/repository","repository_branch","path_of_targetfile_in_repository","base64_encoded_data");
 
 if($up) 
 {	
-pushFile("BENQME","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 ","BENQME/qmelocalmaster2021","main","uploads","base64_encoded_data");
+pushFile("BENQME","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 ","BENQME/qmelocalmaster2021","main","uploads","base64_encoded_data",'$fnm');
 
 echo "<img src=".$filepath." height=200 width=300 />";
 } 
