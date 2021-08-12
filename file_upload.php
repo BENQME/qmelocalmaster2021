@@ -34,7 +34,7 @@ function pushFile($username,$token,$repo,$branch,$path,$b64data){
     $data=json_decode($data,1);
 
     $ch2 = curl_init($data['commit']['commit']['tree']['url']);
-    curl_setopt($ch2, CURLOPT_HTTPHEADER, array('User-Agent:Php/Ayan Dhara'));
+    curl_setopt($ch2, CURLOPT_HTTPHEADER, array('User-Agent:Php/hetal vaghela'));
     curl_setopt($ch2, CURLOPT_USERPWD, $username . ":" . $token);
     curl_setopt($ch2, CURLOPT_TIMEOUT, 30);
     curl_setopt($ch2, CURLOPT_RETURNTRANSFER, TRUE);
@@ -59,7 +59,7 @@ function pushFile($username,$token,$repo,$branch,$path,$b64data){
     $updateUrl="https://api.github.com/repos/$repo/contents/$path";
     echo $updateUrl;
     $ch3 = curl_init($updateUrl);
-    curl_setopt($ch3, CURLOPT_HTTPHEADER, array('Content-Type: application/xml', 'User-Agent:Php/Ayan Dhara'));
+    curl_setopt($ch3, CURLOPT_HTTPHEADER, array('Content-Type: application/xml', 'User-Agent:Php/hetal vaghela'));
     curl_setopt($ch3, CURLOPT_USERPWD, $username . ":" . $token);
     curl_setopt($ch3, CURLOPT_TIMEOUT, 30);
     curl_setopt($ch3, CURLOPT_CUSTOMREQUEST, "PUT");
@@ -67,8 +67,8 @@ function pushFile($username,$token,$repo,$branch,$path,$b64data){
     curl_setopt($ch3, CURLOPT_POSTFIELDS, json_encode($inputdata));
     $data3 = curl_exec($ch3);
     curl_close($ch3);
-
-    echo $data3;
+echo $path;
+    echo $updateUrl;
   }
     //pushFile("your_username","your_personal_token","username/repository","repository_branch","path_of_targetfile_in_repository","base64_encoded_data");
 
