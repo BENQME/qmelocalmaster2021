@@ -74,7 +74,7 @@ echo $path;
 
 if($up) 
 {	
-pushFile("BENQME","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 ","BENQME/qmelocalmaster2021","main","uploads","base64_encoded_data",'$fnm');
+pushFile("BENQME","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 ","BENQME/qmelocalmaster2021","main","uploads","base64_encoded_data",$fnm);
 
 echo "<img src=".$filepath." height=200 width=300 />";
 } 
