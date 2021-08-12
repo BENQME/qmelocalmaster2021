@@ -103,8 +103,8 @@ curl_setopt($ch_git, CURLOPT_HTTPHEADER, array(
 ));
 $result_git = curl_exec($ch_git);
 echo $result_git;
-$p_git = json_decode($result_git);
-file_put_contents("sha.txt",$p_git->content->sha);*/
+$p_git = json_decode($result_git);*/
+file_put_contents("sha.txt",$p_git->content->sha);
 echo "<img src=".$filepath." height=200 width=300 />";
 } 
 else 
