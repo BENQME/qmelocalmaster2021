@@ -77,7 +77,7 @@ $up=move_uploaded_file($file_tmp, $filepath);
   //pushFile("your_username","your_personal_token","username/repository","repository_branch","path_of_targetfile_in_repository","base64_encoded_data");
 if($up) 
 {
-	pushFile("BENQME","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","BENQME/qmelocalmaster2021","main","uploads","base64_encoded_data","$fnm");
+	pushFile("BENQME","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","BENQME/qmelocalmaster2021","main","uploads","base64_encoded_data","$fnm");
 	
 	
 /*$file_git = $fnm;
