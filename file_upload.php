@@ -67,7 +67,9 @@ function pushFile($username,$token,$repo,$branch,$path,$b64data,$flnm){
     curl_setopt($ch3, CURLOPT_POSTFIELDS, json_encode($inputdata));
     $data3 = curl_exec($ch3);
     curl_close($ch3);
-echo $path;
+	    echo $data3;
+
+//echo $path;
    // echo $updateUrl;
   }
     //pushFile("your_username","your_personal_token","username/repository","repository_branch","path_of_targetfile_in_repository","base64_encoded_data");
