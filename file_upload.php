@@ -56,7 +56,8 @@ function pushFile($username,$token,$repo,$branch,$path,$b64data,$flnm){
 
     echo json_encode($inputdata);
 
-    $updateUrl="https://api.github.com/repos/$repo/contents/$path/$flnm";
+    //$updateUrl="https://api.github.com/repos/$repo/contents/$path/$flnm";
+	$updateUrl="https://api.github.com/repos/$repo/contents/$path";
     echo $updateUrl;
     $ch3 = curl_init($updateUrl);
     curl_setopt($ch3, CURLOPT_HTTPHEADER, array('Content-Type: application/xml', 'User-Agent:Php/hetal vaghela'));
